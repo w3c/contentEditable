@@ -3,7 +3,7 @@
   <head>
     <meta charset='utf-8'>
     <title>ContentEditable</title>
-    <script src='https://www.w3.org/Tools/respec/respec-w3c-common' async class='remove'></script>
+    <script src='https://www.w3.org/Tools/respec/respec-w3c' async class='remove'></script>
     <script class='remove'>
       var respecConfig = {
         specStatus: "ED",
@@ -13,6 +13,7 @@
             name: "Johannes Wilm",
             mailto: "johannes@fiduswriter.org",
             company: "Invited Expert",
+            w3cid: "75083",
           },
         ],
         formerEditors: [
@@ -30,10 +31,16 @@
         wgPublicList: "public-editing-tf",
         wgPatentURI: "https://www.w3.org/2004/01/pp-impl/114929/status",
         edDraftURI: "https://w3c.github.io/contentEditable/",
+        xref: "web-platform",
+        localBiblio: {
+          "css-cascade": {
+            aliasOf: "css-cascade-4"
+          }
+        }
       };
     </script>
   </head>
-  <body>
+  <body data-cite="css-cascade-4">
     <section id='abstract'>
       <p>
         This specification defines allowed values and expected behaviors for the {{ElementContentEditable/contentEditable}} attribute.
@@ -45,24 +52,21 @@
     </section>
     <section id='sotd'>
       <p>
+        This is a work in progress.
       </p>
     </section>
 
-    <section>
+    <section class="informative">
         <h2>Problems solved</h2>
-        <p><i>This section is not normative.</i></p>
-        <p>Creating a webbased texteditor requires a considerable amount of
+        <p>Creating a web-based text-editor requires a considerable amount of
         JavaScript on top of the browser code, among other things because:</p>
         <ol>
-            <li>Browsers do not handle all editing operations the same way.</li>
-            <li>Browsers are often buggy in the way they handle certain editing
-            operations.</li>
+            <li>Browsers differ in the manner they handle editing operations.</li>
             <li>Individual sites may have custom preferences for how they want
             to handle certain editing operations.</li>
             <li>The development of high-level text editing features in browsers
             has not followed the principles laid out in the
-            <a href="http://extensiblewebmanifesto.org/">Extensible Web
-            Manifesto</a> in that development of these features has not always
+            [[[EXTENSIBLE]]] in that development of these features has not always
             been in coordination with the needs of the web developer community.
             </li>
         </ol>
@@ -72,18 +76,17 @@
         them.</p>
     </section>
 
-    <section>
+    <section class="informative">
         <h2>Use cases</h2>
-        <p><i>This section is not normative.</i></p>
         <ol>
-            <li>Creating a JavaScript text editor in which the &lt;strong&gt;-tag
-            is used instead of the &lt;b&gt;-tag to mark text that the user marks
+            <li>Creating a JavaScript text editor in which the [^strong^]-tag
+            is used instead of the [^b^]-tag to mark text that the user marks
             as bold, using any browser-builtin way to mark a text as bold,
             without having access to all existing browsers.</li>
             <li>Creating a JavaScript text editor which works with a data model
             in the background where JavaScript takes care of rendering changes to
             the edited text to the DOM.</li>
-            <li>Creating a JavaScript editor which only allows a subset of richtext
+            <li>Creating a JavaScript editor which only allows a subset of rich-text
             editing (for example: bold is allowed, but italic not).</li>
             <li>Creating a collaborative editor in which JavaScript is used to
             render changes to the DOM, based on user intentions with users using
@@ -109,12 +112,12 @@
             <dt><dfn>editing host</dfn></dt>
 
             <dd>An editing host is a node that is an HTML element with a
-            contenteditable attribute set to something else than the `false`
+            {{ElementContentEditable/contentEditable}} attribute set to something else than the `false`
             state.</dd>
 
-            <dt><dfn>contentEditable=false element</dfn></dt>
+            <dt><dfn>`contentEditable=false` element</dfn></dt>
 
-            <dd>Any element that has the contentEditable attribute set to
+            <dd>Any element that has the {{ElementContentEditable/contentEditable}} attribute set to
             `false`.</dd>
 
             <dt><dfn>Inline elements</dfn></dt>
@@ -156,7 +159,7 @@
                 <ol>
                     <li>Before or after any character in any text node.</li>
 
-                    <li>After <a>inline elements</a> that do not have a `nextSibling`
+                    <li>After <a>inline elements</a> that do not have a {{Node/nextSibling}}
                       which is a text node.</li>
 
                     <li>Before <a>inline elements</a> that that do not have a
@@ -179,7 +182,7 @@
 
                 <ol>
                     <li>Within a table, the caret can only be placed inside
-                    `TH`,  `TD` and `CAPTION` elements.</li>
+                    [^TH^],  [^TD^] and [^CAPTION^] elements.</li>
 
                     <li>The caret cannot be placed inside <a>invisible elements</a>.</li>
 
@@ -188,12 +191,6 @@
                 </ol>
             </dd>
         </dl>
-
-        <p>The following items are defined in the CSS Cascading and Inheritance
-        Level 3 specification [[!css-cascade-3]]</p>
-          <ul>
-            <li><dfn><a href="http://www.w3.org/TR/css-cascade-3/#used">used value</a></dfn></li>
-          </ul>
     </section>
 
     <section>
@@ -397,7 +394,7 @@
         <section>
             <h2 id="spell_checking">Advanced grammar checking</h2>
 
-            <p>An implementation CAN provide spell check, grammar check and
+            <p>An implementation MAY provide spell check, grammar check and
             other advanced functionality that are not defined through a
             specification for any <a>editing host</a>.
             These features MUST be disabled by default.</p>
