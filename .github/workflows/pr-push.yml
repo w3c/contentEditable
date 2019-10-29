@@ -11,7 +11,5 @@ jobs:
     name: Validate
     runs-on: ubuntu-latest
     steps:
-      - name: Run respec-validator
       - run: npm install respec-validator
       - run: npx respec-validator --no-links --gh-user=${{ secrets.GH_USER }} --gh-token=${{ secrets.GH_TOKEN }} index.html
-      
