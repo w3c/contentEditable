@@ -93,8 +93,8 @@
         Use cases
       </h2>
       <ol>
-        <li>Creating a JavaScript text editor in which the [^strong^]-tag is
-        used instead of the [^b^]-tag to mark text that the user marks as bold,
+        <li>Creating a JavaScript text editor in which the [^strong^] element is
+        used instead of the [^b^] element to mark text that the user marks as bold,
         using any browser-builtin way to mark a text as bold, without having
         access to all existing browsers.
         </li>
@@ -119,7 +119,7 @@
         </li>
         <li>Creating a JavaScript editor with advanced elements, such as
         non-editable regions, inline SVGs, canvas-elements and other elements
-        for which <code>contenteditable=true</code> currently creates caret
+        for which `contenteditable=true` currently creates caret
         placement issues in several browsers.
         </li>
       </ol>
@@ -228,28 +228,28 @@
         The contenteditable attribute is an enumerated attribute whose keywords
         are the empty string (""), "events", "caret", "typing",
         "plaintext-only", "true", and "false". There is one additional state,
-        the <code>inherit</code> state, which is the missing value default (and
+        the `inherit` state, which is the missing value default (and
         the invalid value default).
       </p>
       <p>
-        The empty string and the "true" keyword map to the <code>true</code>
+        The empty string and the "true" keyword map to the `true`
         state. The other keywords map to their respective states.
       </p>
       <p>
-        The <code>false</code> state indicates that the element is not
-        editable. The <code>inherit</code> state indicates that the element has
+        The `false` state indicates that the element is not
+        editable. The `inherit` state indicates that the element has
         the state of its parent.
       </p>
       <p>
         The contentEditable IDL attribute, on getting, must return the string
-        "true" if the content attribute is set to the <code>true</code> state,
+        "true" if the content attribute is set to the `true` state,
         "plaintext-only" if the content attribute is set to the
-        <code>plaintext-only</code> state, "typing" if the content attribute is
-        set to the <code>typing</code> state, "caret" if the content attribute
-        is set to the <code>caret</code> state, "events" if the content
-        attribute is set to the <code>events</code> state, "false" if the
-        content attribute is set to the <code>false</code> state, and
-        <code>inherit</code> otherwise.
+        `plaintext-only` state, "typing" if the content attribute is
+        set to the `typing` state, "caret" if the content attribute
+        is set to the `caret` state, "events" if the content
+        attribute is set to the `events` state, "false" if the
+        content attribute is set to the `false` state, and
+        `inherit` otherwise.
       </p>
       <p>
         On setting, if the new value is an ASCII case-insensitive match for the
